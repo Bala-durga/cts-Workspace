@@ -1,0 +1,10 @@
+package com.cts.mp.exception;
+
+@SuppressWarnings("serial")
+
+public class MovieException extends Exception {
+	 public MovieException(String errMsg){
+		super(errMsg);
+		}
+	}
+

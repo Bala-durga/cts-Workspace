@@ -1,0 +1,5 @@
+package com.cts.bscp.util;
+
+public class ConnectionProvider {
+
+}

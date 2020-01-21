@@ -1,0 +1,5 @@
+package com.cts.slap.model;
+
+public class Student {
+
+}

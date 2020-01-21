@@ -1,0 +1,20 @@
+package com.cts.mv.dao;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import com.cts.mv.exception.MovieException;
+import com.cts.mv.model.Movie;
+
+public interface IMovieDAO {
+	String add(Movies movie) throws MovieException;
+	boolean delete(String mvId)throws MovieException;
+	Movies searchId(String mvId) throws MovieException;
+	Movies searchName(String mvName) throws MovieException;
+	Movies searchHero(String mvHero) throws MovieException;
+	Movies searchDate(LocalDate releaseDate) throws MovieException;
+	Movies searchCollection(Double collection) throws MovieException;
+	List<Movies> getAll() throws MovieException;;
+	boolean update(Movies movie) throws MovieException;
+	void persist()throws MovieException;
+}

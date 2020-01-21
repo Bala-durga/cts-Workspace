@@ -1,0 +1,8 @@
+package com.cts.em.model;
+
+public class EmployeeAppMenu {
+
+		ADD, REMOVE, SEARCH, LIST, QUIT;
+	}
+
+

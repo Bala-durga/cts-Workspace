@@ -1,0 +1,144 @@
+
+		package com.cts.slap.ui;
+
+		import java.time.DateTimeException;
+		import java.time.LocalDate;
+		
+		import java.time.format.DateTimeFormatter;
+		import java.util.List;
+		import java.util.Scanner;
+        import com.cts.slap.model.StudentLogMenu;
+		import com.cts.slap.exception.StudentLogException;
+		import com.cts.slap.model.Student;
+		import com.cts.slap.service.StudentServiceImpl;
+		import com.cts.slap.service.StudentService;
+
+		public class StudentLogManagementUI {
+
+			private static StudentService studentService;
+			private static Scanner scan;
+			public static void main(String[] args) {
+
+				try {
+					studentService = new StudentServiceImpl();
+				} catch (StudentLogException e) {
+					e.printStackTrace();
+				}
+
+
+				scan = new Scanner(System.in);
+
+				StudentLogMenu menu = null;
+
+				while (menu != StudentLogMenu.QUIT) {
+
+					System.out.println("Choice\t");
+					System.out.println("===========================");
+					for (StudentLogMenu m : StudentLogMenu.values()) {
+						System.out.println(m.ordinal() + "\t" + m.name());
+					}
+					System.out.print("Choice: ");
+					int choice = -1;
+					if (scan.hasNextInt())
+						choice = scan.nextInt();
+					else {
+						scan.next();
+						System.out.println("Pleae choose a choice displayed");
+						continue;
+					}
+
+					if (choice < 0 || choice >= StudentLogMenu.values().length) {
+						System.out.println("Invalid Choice");
+					} else {
+						menu = StudentLogMenu.values()[choice];
+						switch (menu) {
+						case ADD:
+							doAdd();
+							break;
+						case LIST:
+							doList();
+							break;
+						case SEARCH:
+							doSearch();
+							break;
+						case REMOVE:
+							doRemove();
+							break;
+						case QUIT:
+							System.out.println("ThanQ Come Again!");
+							break;
+						}
+					}
+
+				}
+
+				scan.close();
+			}
+			
+			private static void doAdd() {
+				try {
+					Student student = new Student();
+					System.out.print("rollnumber: ");
+					student.setRollNum(scan.next());
+					System.out.print("sname ");
+					student.setSName(scan.next());
+					System.out.print("sur name ");
+					String surName = scan.next();
+
+					try {
+					String rollNum = studentService.add(student);
+					System.out.println("Student is added with roll number " + rollNum);
+				} catch (StudentLogException exp) {
+					System.out.println(exp.getMessage());
+				}
+				
+			private static void doList() {
+				List<Student> students;
+				try {
+					students = studentService.getAll();
+					if (students.size() == 0) {
+						System.out.println("No students To display");
+					} else {
+						for (Student s : students)
+							System.out.println(s);
+					}
+				} catch (StudentLogException exp) {
+					System.out.println(exp.getMessage());
+				}
+			}
+
+			private static void doSearch() {
+				System.out.print("roll number ");
+				String rollNum = scan.next();
+
+				try {
+					Student student= studentService.get(rollNum);
+					if (student != null) {
+						System.out.println(student);
+					} else {
+						System.out.println("No Such student");
+					}
+				} catch (StudentLogException exp) {
+					System.out.println(exp.getMessage());
+				}
+			}
+
+			private static void doRemove() {
+				System.out.print("roll number ");
+				String rollNum = scan.next();
+				try {
+					boolean isDone = studentService.delete(rollNum);
+					if (isDone) {
+						System.out.println("roll num is Deleted");
+					} else {
+						System.out.println("No Such Student");
+					}
+				} catch (StudentLogException exp) {
+					System.out.println(exp.getMessage());
+				}
+			}
+				}
+	
+	}
+
+}

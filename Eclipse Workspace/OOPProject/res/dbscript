@@ -1,0 +1,6 @@
+CREATE TABLE studentss(
+	sid CHAR(4) PRIMARY KEY,
+	sname VARCHAR(20) NOT NULL,
+	fee DECIMAL(7,2) NOT NULL,
+	joinDate date NOT NULL
+);

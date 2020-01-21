@@ -1,0 +1,10 @@
+package com.cts.slap.exception.copy;
+
+	@SuppressWarnings("serial")
+	public class StudentLogException extends Exception {
+		public StudentException(String errMsg){
+			super(errMsg);
+		}
+
+
+}

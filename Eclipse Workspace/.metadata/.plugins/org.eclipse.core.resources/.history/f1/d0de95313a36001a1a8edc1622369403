@@ -1,0 +1,16 @@
+package com.cts.slap.dao;
+import java.util.List;
+
+import com.cts.slap.model.Student;
+import com.cts.slap.exception.StudentException;
+
+public interface StudentDAO {
+	
+		String add(Student s) throws StudentException;
+		boolean delete(String sid)throws StudentException;
+		Student get(String mcode) throws StudentException;;
+		List<Student> getAll() throws StudentException;;
+		boolean update(Student s) throws StudentException;
+		
+
+}

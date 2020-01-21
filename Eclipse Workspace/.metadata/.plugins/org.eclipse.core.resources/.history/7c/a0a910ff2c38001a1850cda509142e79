@@ -1,0 +1,5 @@
+package com.cts.mp.dao;
+
+public class IMoviesDao {
+
+}

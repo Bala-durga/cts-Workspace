@@ -1,0 +1,5 @@
+package com.cts.bscp.exception;
+
+public class BookStoreException {
+
+}

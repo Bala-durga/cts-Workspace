@@ -1,0 +1,10 @@
+package com.cts.mp.model;
+
+@SuppressWarnings("serial")
+
+public class MoviesAppMenu extends Exception {
+	 public MoviesAppMenu(String errMsg){
+		super(errMsg);
+		}
+	}
+

@@ -1,0 +1,5 @@
+package com.cts.mp.model;
+
+public enum MovieAppMenu {
+	ADD,REMOVE,SEARCH,HERO_WISE,COLLECTION_WISE,TITLE_WISE,DATE_WISE,LIST,QUIT;
+}

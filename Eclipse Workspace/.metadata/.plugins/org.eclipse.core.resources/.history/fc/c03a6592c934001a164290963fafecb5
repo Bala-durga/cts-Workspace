@@ -1,0 +1,5 @@
+package com.cts.slap.service;
+
+public class StudentService {
+
+}

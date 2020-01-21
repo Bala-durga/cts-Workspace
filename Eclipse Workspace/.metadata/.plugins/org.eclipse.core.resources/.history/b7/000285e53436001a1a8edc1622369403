@@ -1,0 +1,112 @@
+package com.cts.slap.service;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import com.cts.slap.dao.StudentDAOCollectionImpl;
+import com.cts.slap.dao.StudentDAO;
+import com.cts.slap.exception.StudentLogException;
+import com.cts.slap.model.Student;
+
+public class StudentServiceImpl implements StudentService {
+	
+	private StudentDAO studentDAO;
+
+	public StudentDAO getDAO(){
+		return studentDAO;
+	}
+	
+	public StudentServiceImpl() throws StudentLogException {
+		studentDAO = new StudentDAOCollectionImpl();
+	}
+	
+	public boolean isValidRollNum(String rollNum){
+		
+		/*
+		 * First letter must be capital
+		 * Followed by three digits
+		 */
+		Pattern rollNumPattern = Pattern.compile("[A-Z]\\0-9");
+		Matcher rollNumMatcher = rollNumPattern.matcher(rollNum);
+		
+		return rollNumMatcher.matches();
+	}
+	
+	public boolean isValidsname(String sname){
+		Pattern namePattern = Pattern.compile("[A-Z]\\w{3,19}");
+		Matcher nameMatcher = namePattern.matcher(sname);
+		
+		return nameMatcher.matches();
+	}
+	
+	public boolean isValidsurName(String surName){
+		Pattern surNamePattern=Pattern.compile("[A-Z]\\w{3,19");
+	    Matcher surNameMatcher=surNamePattern.matcher(surName);
+	    return surNameMatcher.matches();
+	}
+	
+	public boolean isValidStudent(Student student) throws StudentLogException{
+		boolean isValid=false;
+		
+		List<String> errMsgs = new ArrayList<>();
+		
+		if(!isValidRollNum(student.getRollNUm()))
+			errMsgs.add("roll number should be combination of digits and letters");
+		
+		if(!isValidsname(student.getSName()))
+			errMsgs.add("name must be in between 4 to 20 chars in length");
+		
+		if(!isValidsurName(student.getSSurname()))
+			errMsgs.add("surname must be in betwen 4 to 10 characters");
+		if(errMsgs.size()==0)
+			isValid=true;
+		else
+			throw new StudentLogException(errMsgs.toString());
+		
+		return isValid;
+	}
+
+
+	@Override
+	public String add(Student student) throws StudentLogException {
+		String rollNum=null;
+		if(student!=null && isValidStudent(student)){
+			rollNum=studentDAO.add(student);
+		}
+		return rollNum;
+	}
+
+	@Override
+	public boolean delete(String rollNum) throws StudentLogException {
+		boolean isDone=false;
+		if(rollNum!=null && isValidRollNum(rollNum)){
+			studentDAO.delete(rollNum);
+			isDone = true;
+		}else{
+			throw new StudentLogException("roll num should be combination of letters and digits");
+		}
+		return isDone;
+	}
+
+	@Override
+	public Student get(String rollNum) throws StudentLogException {
+		return studentDAO.get(rollNum);
+	}
+
+	@Override
+	public List<Student> getAll() throws StudentLogException {
+		return studentDAO.getAll();
+	}
+
+	@Override
+	public boolean update(Student student) throws StudentLogException {
+		boolean isDone = false;
+		
+		if(student!=null && isValidStudent(student)){
+			isDone = studentDAO.update(student);
+		}
+		
+		return isDone;
+	}
+}

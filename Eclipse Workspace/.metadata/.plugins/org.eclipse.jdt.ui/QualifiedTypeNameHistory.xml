@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.cts.oopd.model.GenericSort"/>
+<fullyQualifiedTypeName name="com.cts.oopd.model.BubbleSort"/>
+<fullyQualifiedTypeName name="com.cts.oopd.model.ISort"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="com.cts.oopd.model.Person"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.cts.bscp.dao.BookDAOJDBCImpl"/>
+<fullyQualifiedTypeName name="com.cts.slap.dao.StudentDAOJDBCImpl"/>
+</qualifiedTypeNameHistroy>

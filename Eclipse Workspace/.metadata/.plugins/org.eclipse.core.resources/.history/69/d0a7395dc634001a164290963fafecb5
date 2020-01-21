@@ -1,0 +1,8 @@
+package com.cts.slap.model;
+@SuppressWarnings("serial")
+public class StudentLogException extends Exception{
+	public StudentLogException(String errMsg){
+		super(errMsg);
+	}
+
+}

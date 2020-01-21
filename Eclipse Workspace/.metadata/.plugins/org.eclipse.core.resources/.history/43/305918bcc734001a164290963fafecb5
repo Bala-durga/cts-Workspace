@@ -1,0 +1,56 @@
+package com.cts.slap.model;
+import java.io.Serializable;
+
+
+@SuppressWarnings("serial")
+public class Student implements Serializable /* implements Comparable<Student> */ {
+
+	private String sname;
+	private String sSurname;
+	private int rollNum;
+
+	public Student() {
+		/* default constructor */
+	}
+
+	public Student(String sname, String sSurname, int rollNum) {
+		super();
+		this.sname = sname;
+		this.sSurname = sSurname;
+		this.rollNum = rollNum;
+	}
+
+	public String getSName() {
+		return sname;
+	}
+
+	public void setSName(String sname) {
+		this.sname = sname;
+	}
+
+	public String getSSurname() {
+		return sSurname;
+	}
+
+	public void setSSurname(String sSurname) {
+		this.sSurname = sSurname;
+	}
+
+	public int getRollNUm() {
+		return rollNum;
+	}
+
+	public void setRollNum(int rollNum) {
+		this.rollNum = rollNum;
+	}
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder("Student Name ");
+		sb.append(sname);
+		sb.append("\tStudent Surname ");
+		sb.append(sSurname);
+		sb.append("\troll number");
+		sb.append(rollNum);
+		return sb.toString();
+	}
+}

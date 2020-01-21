@@ -1,0 +1,16 @@
+package com.cts.slap.model;
+
+import com.cts.slap.model.Student;
+import com.cts.slap.StudentLogException;
+
+import java.util.List;
+
+public interface StudentDAO{	
+	String add(Student sname) throws StudentLogException;
+	boolean delete(String sSurname)throws StudentLogException;
+	Student get(int rollNum) throws StudentLogException;;
+	List<Student> getAll() throws StudentLogException;;
+	boolean update(Student student) throws StudentLogException;
+	//void persist()throws BookStoreException;
+}
+

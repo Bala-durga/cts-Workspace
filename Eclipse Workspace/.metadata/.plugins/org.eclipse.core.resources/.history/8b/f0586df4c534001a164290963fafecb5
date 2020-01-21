@@ -1,0 +1,5 @@
+package com.cts.slap.exception;
+
+public class StudentLogException {
+
+}

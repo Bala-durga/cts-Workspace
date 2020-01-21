@@ -1,0 +1,5 @@
+package com.cts.slap.util;
+
+public class ConnectionProvider {
+
+}

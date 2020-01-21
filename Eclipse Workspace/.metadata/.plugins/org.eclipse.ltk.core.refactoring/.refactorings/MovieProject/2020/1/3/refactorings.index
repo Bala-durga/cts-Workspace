@@ -1,0 +1,16 @@
+1579147115866	Delete element
+1579156252068	Rename compilation unit 'MovieException.java'
+1579157555977	Delete element
+1579261826556	Rename compilation unit 'Movies.java'
+1579261914539	Rename compilation unit 'MoviesAppMenu.java'
+1579261934988	Rename compilation unit 'MoviesMenu.java'
+1579261973120	Rename type 'MoviesException'
+1579262085859	Rename type 'IMoviesDao'
+1579263116640	Rename type 'Movie'
+1579263172994	Rename type 'MovieMenu'
+1579263218892	Rename compilation unit 'MovieAppMenu.java'
+1579263263178	Rename type 'MovieException'
+1579263691076	Delete element
+1579263897624	Rename type 'MoviesException'
+1579263977530	Rename compilation unit 'IMovieDao.java'
+1579264038160	Rename type 'MoviesDaoCollectionImpl'

@@ -1,0 +1,10 @@
+package com.cts.em.ui;
+
+public class EmployeeUI {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

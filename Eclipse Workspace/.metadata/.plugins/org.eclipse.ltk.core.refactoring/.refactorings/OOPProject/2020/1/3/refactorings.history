@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.cts.oopd.util&apos; to &apos;com.cts.slap.util&apos;&#x0D;&#x0A;- Original project: &apos;OOPProject&apos;&#x0D;&#x0A;- Original element: &apos;OOPProject/src/com.cts.oopd.util&apos;&#x0D;&#x0A;- Renamed element: &apos;OOPProject/src/com.cts.slap.util&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.cts.oopd.util&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.cts.oopd.util" name="com.cts.slap.util" qualified="false" references="true" stamp="1579255615825" textual="false" version="1.0"/>
+</session>

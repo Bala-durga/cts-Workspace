@@ -1,0 +1,17 @@
+package com.cts.MT.service;
+
+import java.util.List;
+
+import com.cts.MT.exception.StudentException;
+import com.cts.MT.model.Student;
+
+public interface StudentService {
+	String add(Student s) throws StudentException;
+	boolean delete(String sid) throws StudentException;
+	Student get(String sid) throws StudentException;
+	List<Student> getAll() throws StudentException;;
+	boolean update(Student s) throws StudentException;
+	//void persist()throws StudentException;
+	
+
+}

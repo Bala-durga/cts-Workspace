@@ -1,0 +1,60 @@
+package com.cts.slap.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import com.cts.slap.exception.StudentLogException;
+import com.cts.slap.model.Student;
+
+public class StudentDAOCollectionImpl implements StudentDAO {
+	
+	private Map<String, Student> students;
+	
+	public StudentDAOCollectionImpl() {
+		students = new TreeMap<>();
+	}
+	
+	@Override
+	public String add(Student student) throws StudentLogException {
+		String rollNum = null;
+		if (rollNum!= null) {
+			rollNum = student.getRollNUm();
+			students.put(rollNum,student);	
+		}
+		return rollNum;
+	}
+	
+	@Override
+	public boolean delete(String rollNum) throws StudentLogException {
+		boolean isDone = false;
+		if (rollNum != null) {
+			students.remove(rollNum);
+			isDone = true;
+		}
+		return isDone;
+	}
+	
+	@Override
+	public Student get(String rollNum) throws StudentLogException {
+		return students.get(rollNum);
+	}
+	
+
+	@Override
+	public List<Student> getAll() throws StudentLogException {
+		return new ArrayList<>(students.values());
+	}
+	
+	@Override
+	public boolean update(Student student) throws StudentLogException {
+		boolean isDone = false;
+		if (student!= null) {
+			String rollNum = student.getRollNUm();
+			students.replace(rollNum, student);
+			
+		}
+		return isDone;
+	}
+}

@@ -1,0 +1,56 @@
+package com.cts.mp.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import com.cts.mp.exception.MovieException;
+import com.cts.mp.model.Movies;
+
+public class MoviesDaoCollectionImpl implements IMoviesDao {
+	
+	private Map<String, Movies> movies;
+	public MoviesDaoCollectionImpl() {
+		movies =new TreeMap<>();
+	}
+	
+	
+	@Override
+	public String add(Movies movie) throws MovieException {
+		String id = null;
+		if (movie != null) {
+			id = movie.getId();
+			movies.put(id, movie);	
+		}
+		return id;
+	}
+
+	@Override
+	public boolean delete(String id) throws MovieException {
+		boolean isDone = false;
+		if (id != null) {
+			movies.remove(id);
+			isDone = true;
+		}
+		return isDone;
+	}
+
+	@Override
+	public Movies get(String id) throws MovieException {
+
+		return movies.get(id);
+	}
+
+	@Override
+	public List<Movies> getAll() throws MovieException {
+		return new ArrayList<>(movies.values());
+	}
+
+	@Override
+	public void persist() throws MovieException {
+		// TODO Auto-generated method stub
+
+	}
+
+}

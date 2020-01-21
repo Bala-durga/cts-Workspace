@@ -1,0 +1,15 @@
+package com.cts.mp.Services;
+
+import java.util.List;
+
+import com.cts.mp.exception.MovieException;
+import com.cts.mp.model.Movies;
+
+public interface IMoviesServices {
+	String add(Movies movie) throws MovieException;
+	boolean delete(String id) throws MovieException;
+	List<Movies> getAll() throws MovieException;
+	void persist()throws MovieException;
+	Movies get(String id) throws MovieException;
+	
+}

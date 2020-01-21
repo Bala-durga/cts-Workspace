@@ -1,0 +1,10 @@
+package com.cts.oopd.ui;
+
+public class DeQueueDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

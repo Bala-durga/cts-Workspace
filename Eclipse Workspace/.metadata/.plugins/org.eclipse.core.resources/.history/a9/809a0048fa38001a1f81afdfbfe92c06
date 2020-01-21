@@ -1,0 +1,5 @@
+package com.cts.bscp.dao;
+
+public interface IQueryMapper {
+
+}
