@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <table border="1" cellspacing="2" cellpadding="2">
+    <tr>
+      <td align="center">
+        Enter firstNum:
+        <input type="number" placeholder="enter First Num"
+         [(ngModel)]="firstNum"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        Enter secondNum:
+        <input type="number" placeholder="enter second Num"
+        [(ngModel)]="secondNum"/>
+      </td>
+    </tr>
+    <tr>
+          <td align="center">
+        Result:
+        <input type="number"
+        [(ngModel)]="result"/>
+      </td> 
+    </tr>
+
+      <button (click)="add()"> Addition</button>
+      <button (click)="sub()"> Subtraction</button>
+      <button (click)="mul()"> Multiplication</button>
+      <button (click)="div()"> Division</button>   
+    
+  </table>
+  
+</body>
+</html>
