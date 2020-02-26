@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Orders</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Address</th>
+        <th>Date</th>
+        <th>Product</th>
+        <th>Price</th>
+      </tr>
+    </thead> 
+    <tbody>
+      <tr *ngFor="let order of orders$ | async">
+        <td>{{ order.shipping.name }}</td>
+        <td>{{ order.shipping.city }} </td>
+        <td>{{ order.shipping.addressLine1 }} </td>
+        <td>{{ order.datePlaced | date}}</td>
+        <td>{{ order.items[0].product.title}}</td>
+        <td>{{ order.items[0].totalPrice}}$</td>
+      </tr>
+    </tbody> 
+  </table>
+</div><!-- /.container -->

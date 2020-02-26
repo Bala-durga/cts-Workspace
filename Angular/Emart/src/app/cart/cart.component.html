@@ -1,0 +1,37 @@
+<section class="container-fluid bg-light p-5">
+    <h3>Items List</h3>
+
+    <div class="card" *ngIf="items.length==0">
+        <p class="card-text">No Items Found</p>
+    </div>
+
+    <table class="table table-stripped table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Item Id</th>
+                <th>Item Name</th>
+                <th>Item Price</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of items">
+                <td>{{c.itemLogo}}</td>
+                <td>{{c.itemId}}</td>
+                <td>{{c.itemName}} </td>
+                <td>Rs.{{c.itemPrice}}</td>
+                <td>{{c.itemsQuantity}}</td>
+                
+        </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="5"><strong>{{items.length}} Items.</strong></th>
+                <th><a  href="payment">Payment</a></th>
+            </tr> 
+        </tfoot>
+    </table>
+</section>
+

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import{FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NumberSeriesComponent } from './number-series/number-series.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     DashBoardComponent,
     ObservableDemoComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NumberSeriesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

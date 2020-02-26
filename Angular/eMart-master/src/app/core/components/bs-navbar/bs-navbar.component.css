@@ -1,0 +1,19 @@
+/* ------------------------------------------------------------ *\
+	NavBar
+\* ------------------------------------------------------------ */
+
+.navbar { background-color: #fff;  }
+.navbar .username-photo { display: inline-block; width: 30px; height: 30px; border-radius: 50%; }
+.navbar .username-photo img { border-radius: 50%; }
+
+/* ------------------------------------------------------------ *\
+	Logo
+\* ------------------------------------------------------------ */
+
+.logo { width: 120px; height: auto; }
+
+.logo img { max-width: 100%; }
+
+.dropdown-toggle { 
+  cursor: pointer;
+}
