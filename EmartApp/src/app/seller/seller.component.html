@@ -1,0 +1,86 @@
+
+<h2>Add Products To Be Sold</h2>
+<div class="container">
+    <form #sellerProduct="ngForm" action="/action_page.php" (ngSubmit)="save()">
+        <div class="row">
+            <div class="col-25">
+                <label for="PNM">Product Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="PNM" name="productName"   [(ngModel)]="id.productName" placeholder="Enter Product name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="PID">Product id</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="PID" name="productId"  [(ngModel)]="id.productId" placeholder="Enter Product id">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-25">
+                <label for="category">CATEGORY</label>
+            </div>
+            <div class="col-75">
+
+                <input type="text" id="cat" name="category" [(ngModel)]="id.category" placeholder="Enter Category">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="PRICE">Price</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="PRICE" name="Price" [(ngModel)]="id.price" placeholder="Enter price of the product">
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Discount percentage</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="pdis" name="discount" [(ngModel)]="id.discount" placeholder="Enter Product Discount percentage">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Product Image</label>
+            </div>
+            <div class="col-75">
+                <input id="filebutton" name="filebutton" class="input-file" type="file">
+            </div>
+        </div>
+ 
+        <div class="row">
+            <div class="col-25">
+                <label for="STOCK">Stock</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="STOCK" name="stock" [(ngModel)]="id.stock" placeholder="Enter stock">
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-25">
+                <label for="PDESC">DESCRIPTION</label>
+            </div>
+            <div class="col-75">
+                <textarea id="subject" name="description" [(ngModel)]="id.description" placeholder="Write something.." style="height:200px"></textarea>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <input [disabled]="seller.form.invalid" type="submit" value="ADD Product">
+        </div> -->
+        <button [disabled]="sellerProduct.form.invalid" class="btn btn-info btn-primary  my-4" type="submit" >Add Product</button>
+         
+    </form>
+</div>

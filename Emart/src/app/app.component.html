@@ -1,0 +1,58 @@
+<nav  class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Emart</a>
+
+  <button class="navbar-toggler" type="button"
+   data-toggle="exapnd" data-target="#collapsibleNavbar">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ol class="navbar-nav">
+      <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Login
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="login">Buyer</a>
+          <a class="dropdown-item" href="login">Seller</a>
+        </div>
+      </div> -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            User
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="login">Buyer</a>
+            <a class="dropdown-item" href="slogin">Seller</a>
+            
+          </div>
+        </div>
+     
+        <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="login">Buyyer</a>
+          <a class="dropdown-item" href="login">Seller</a>
+        </div> -->
+     
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="buyer">Buyer</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="contact">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="cart">Cart</a>
+      </li>
+      
+      <li>
+        <form class="form-inline" action="list">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-success " type="submit">Search</button>
+        </form>
+      </li>
+      </ol>
+      </div>
+      </nav>
+      <router-outlet></router-outlet>
+<footer class="container-fluid bg-dark fixed-bottom p-1 text-light">
+  &copy;All rights reserved @ 2020
+</footer>

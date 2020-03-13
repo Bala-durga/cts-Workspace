@@ -1,0 +1,287 @@
+<html>
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<div class="container">
+    <div class="paymentcss">
+      
+        <div class="row cart-body">
+
+            <div class="col-md-6">
+                <form #userPay="ngForm" class="form-horizontal" method="post" (ngSubmit)="save()" action="">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Address</div>
+                        <div class="panel-body">
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <h4>Shipping Address</h4>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Country:</strong></div>
+                                <div class="col-md-12">
+                                    <!-- <input type="text" class="form-control" name="country" [(ngModel)]="pay.country"
+                                        value="" /> -->
+                                    <input type="text" name="country1" [(ngModel)]="pmt.country"
+                                        [(ngModel)]="pay.country" placeholder="country" class="form-control"
+                                        required="required" #con="ngModel" />
+                                    <div *ngIf="(con.touched||con.dirty)&&con.invalid">
+                                        <small class="text-danger" *ngIf="con.errors.required">Can not be left
+                                            blank</small>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-xs-12">
+                                    <strong>First Name:</strong>
+                                    <input type="text" name="fnm1" [(ngModel)]="pmt.firstName"
+                                        [(ngModel)]="pay.firstName" placeholder="first Name" class="form-control"
+                                        required="required" minlength="4" #fnm="ngModel" />
+                                    <div *ngIf="(fnm.touched||fnm.dirty)&&fnm.invalid">
+                                        <small class="text-danger" *ngIf="fnm.errors.required">Can not be left
+                                            blank</small>
+                                        <small class="text-danger" *ngIf="fnm.errors.minlength">Can not be less than 4
+                                            characters</small>
+                                        </div>
+                                </div>
+                                <div class="span1"></div>
+                                <div class="col-md-6 col-xs-12">
+                                    <strong>Last Name:</strong>
+                                    <input type="text" name="lnm1" [(ngModel)]="pmt.lastName"
+                                    [(ngModel)]="pay.lastName" placeholder="lastName" class="form-control"
+                                    required="required" minlength="4" #lnm="ngModel" />
+                                <div *ngIf="(lnm.touched||lnm.dirty)&&lnm.invalid">
+                                    <small class="text-danger" *ngIf="lnm.errors.required">Can not be left
+                                        blank</small>
+                                    <small class="text-danger" *ngIf="lnm.errors.minlength">Can not be less than 4
+                                        characters</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Address:</strong></div>
+                                <div class="col-md-12">
+                                    <input type="text" name="add1" [(ngModel)]="pmt.address"
+                                        [(ngModel)]="pay.address" placeholder="Address" class="form-control"
+                                        required="required" #add="ngModel" />
+                                    <div *ngIf="(add.touched||add.dirty)&&add.invalid">
+                                        <small class="text-danger" *ngIf="add.errors.required">Can not be left
+                                            blank</small>
+                                    
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>City:</strong></div>
+                                <div class="col-md-12">
+                                    <!-- <input type="text" name="city" class="form-control" [(ngModel)]="pay.city"
+                                        value="" /> -->
+                                        <input type="text" name="city1" [(ngModel)]="pmt.city"
+                                        [(ngModel)]="pay.city" placeholder="City" class="form-control"
+                                        required="required" #city="ngModel" />
+                                    <div *ngIf="(city.touched||city.dirty)&&city.invalid">
+                                        <small class="text-danger" *ngIf="city.errors.required">Can not be left
+                                            blank</small>
+                                        
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>State:</strong></div>
+                                <div class="col-md-12">
+                                    <!-- <input type="text" name="state" class="form-control" [(ngModel)]="pay.state"
+                                        value="" /> -->
+                                        <input type="text" name="state1" [(ngModel)]="pmt.state"
+                                        [(ngModel)]="pay.state" placeholder="State" class="form-control"
+                                        required="required" #state="ngModel" />
+                                    <div *ngIf="(state.touched||state.dirty)&&state.invalid">
+                                        <small class="text-danger" *ngIf="state.errors.required">Can not be left
+                                            blank</small>
+                                        
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Zip / Postal Code:</strong></div>
+                                <div class="col-md-12">
+                                    <!-- <input type="text" name="zipcode" class="form-control" [(ngModel)]="pay.zipcode"
+                                        value="" /> -->
+                                        <input type="text" name="zipcode" [(ngModel)]="pmt.zipcode"
+                                        [(ngModel)]="pay.zipcode" placeholder="Zip Code" class="form-control"
+                                        required="required" minlength="6" maxlength="6" #zip="ngModel" />
+                                    <div *ngIf="(zip.touched||zip.dirty)&&zip.invalid">
+                                        <small class="text-danger" *ngIf="zip.errors.required">Can not be left
+                                            blank</small>
+                                        <small class="text-danger" *ngIf="zip.errors.minlength">It must be 6
+                                            characters</small>
+                                            <small class="text-danger" *ngIf="zip.errors.maxlength">It must be 6
+                                                characters</small>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Phone Number:</strong></div>
+                                <div class="col-md-12">
+                                    <!-- <input type="text" name="phoneNumber" class="form-control"
+                                        [(ngModel)]="pay.phoneNumber" value="" /> -->
+                                        <input type="text" name="phoneNumber" [(ngModel)]="pmt.phoneNumber"
+                                        [(ngModel)]="pay.phoneNumber" placeholder="Phone Number" class="form-control"
+                                        required="required" minlength="10" maxlength="10" #phno="ngModel" />
+                                    <div *ngIf="(phno.touched||phno.dirty)&&phno.invalid">
+                                        <small class="text-danger" *ngIf="phno.errors.required">Can not be left
+                                            blank</small>
+                                        <small class="text-danger" *ngIf="phno.errors.minlength">It must be 10 Digits
+                                            </small>
+                                            <small class="text-danger" *ngIf="phno.errors.maxlength">It must be 10 Digits
+                                            </small>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Email Address:</strong></div>
+                                <div class="col-md-12">
+                                    <!-- <input type="text" name="email" class="form-control"
+                                        [(ngModel)]="pay.email" value="" /> -->
+                                        <input type="text" name="email" [(ngModel)]="pmt.email"
+                                        [(ngModel)]="pay.email" placeholder="Email" class="form-control"
+                                        required="required" minlength="4" #email1="ngModel" />
+                                    <div *ngIf="(email1.touched||email1.dirty)&&email1.invalid">
+                                        <small class="text-danger" *ngIf="email1.errors.required">Can not be left
+                                            blank</small>
+                                        <small class="text-danger" *ngIf="email1.errors.minlength">Must contain @ Symbol
+                                            </small>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <form   #userPay="ngForm" class="form-horizontal" method="post" (ngSubmit)="save()" action="">
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Card Type:</strong></div>
+                                <div class="col-md-12">
+                                    <select id="CreditCardType" name="cardType" [(ngModel)]="pay.cardType"
+                                        class="form-control">
+                                        <option value="5">Visa</option>
+                                        <option value="6">MasterCard</option>
+                                        <option value="7">American Express</option>
+                                        <option value="8">Discover</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Credit Card Number:</strong></div>
+                                <div class="col-md-12">
+                                    <!-- <input type="text" [(ngModel)]="pay.cardNumber"
+                                        class="form-control" name="cardNumber" value="" /> -->
+                                        <input type="text" name="cardNumber" [(ngModel)]="pmt.cardNumber"
+                                        [(ngModel)]="pay.cardNumber" placeholder=" Card Number" class="form-control"
+                                        required="required" minlength="16" maxlength="16" #cno="ngModel" />
+                                    <div *ngIf="(cno.touched||cno.dirty)&&cno.invalid">
+                                        <small class="text-danger" *ngIf="cno.errors.required">Can not be left
+                                            blank</small>
+                                        <small class="text-danger" *ngIf="cno.errors.minlength">Must Contain 16 Digits
+                                            </small>
+                                            <small class="text-danger" *ngIf="cno.errors.maxlength">Must Contain 16 Digits
+                                            </small>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Card CVV:</strong></div>
+                                <div class="col-md-12">
+                                    <!-- <input type="text" class="form-control" name="cardCode"
+                                        [(ngModel)]="pay.cardCode" value="" /> -->
+                                        <input type="text" name="cardCode" [(ngModel)]="pmt.cardCode"
+                                        [(ngModel)]="pay.cardCode" placeholder="Card Code" class="form-control"
+                                        required="required" minlength="3" maxlength="3" #cc="ngModel" />
+                                    <div *ngIf="(cc.touched||cc.dirty)&&cc.invalid">
+                                        <small class="text-danger" *ngIf="cc.errors.required">Can not be left
+                                            blank</small>
+                                        <small class="text-danger" *ngIf="cc.errors.minlength">Can not be less than 3
+                                            characters</small>
+                                            <small class="text-danger" *ngIf="cc.errors.maxlength">Can not be less than 3
+                                                characters</small>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <strong>Expiration Date</strong>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <select class="form-control" name="month">
+                                        <option value="">Month</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <select class="form-control" name="year">
+                                        <option value="">Year</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <span>Pay secure using your credit card.</span>
+                                </div>
+                                <div class="col-md-12">
+                                    <ul class="cards">
+                                        <li class="visa hand">Visa</li>
+                                        <li class="mastercard hand">MasterCard</li>
+                                        <li class="amex hand">Amex</li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <button [disabled]="userPay.form.invalid" type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+</html>

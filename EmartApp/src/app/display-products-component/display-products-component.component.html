@@ -1,0 +1,44 @@
+<h2 style='color:orange'>New Items List</h2>
+<p *ngIf="errMsg">{{errMsg}}</p>
+<table *ngIf="pro" class="table table-striped">
+<thead>
+    <tr>
+        <th>Product Id</th>
+        <br>
+        <th>Product Name</th>
+        <br>
+        <th>Category</th>
+        <br>
+        <th>Product Description</th>
+        <br>
+        <th>Product Price</th>
+        <br>
+        <th>Discount</th>
+        <br>
+        <th>Stock</th>
+       
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let e of pro">
+        <td>{{e.productId}}</td>
+        <br>
+        <td>{{e.productName}}</td>
+        <br>
+        <td>{{e.category}}</td>
+        <br>
+        <td>{{e.description}}</td>
+        <br>
+        <td>{{e.price}}</td>
+        <br>
+        <td>{{e.discount}}</td>
+        <br>
+        <td>{{e.stock}}</td>
+        
+    </tr>
+    <tr>
+        <td colspan="4"><button type="submit" routerLink="/seller" class="btn btn-warning">Add new
+                Items</button></td>
+    </tr>
+</tbody>
+</table>
