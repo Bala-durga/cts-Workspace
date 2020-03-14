@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
   login=new Login("","");
   
   user:Ulogin 

@@ -22,7 +22,7 @@ import { WomenComponent } from './women/women.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms'; 
 import { SellerLoginComponent } from './seller-login/seller-login.component';
 import { SellerRegistrationComponent } from './seller-registration/seller-registration.component';
 import { SubCategoryComponent } from './sub-category/sub-category.component';
@@ -65,7 +65,8 @@ import { DisplayProductsComponent } from './display-products-component/display-p
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
