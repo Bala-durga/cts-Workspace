@@ -1,0 +1,21 @@
+My associate id:
+844417
+Other team members:
+844222, 844204, 844228, 844202
+Team lead:
+844222
+My Role in team:
+1. To develop Appointment Page with Validations and models
+My development files:
+1. Appointment.ts
+2.AppointmentFrom.html
+3.AppointmentFrom.css
+4. package.json
+5.AppointmentFromComponet.ts
+
+I was strong in:
+1. Template Driven Forms
+I was weak in:
+1. Documentation
+Feedback:
+1. Able to read codesprint document 1 day in advance will help.
